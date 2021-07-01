@@ -6,15 +6,20 @@ from telegram.ext import (Updater, CommandHandler, MessageHandler, Filters, Conv
 from wh_img import custom_title, random_title, title_from_keyword, print_tutorial
 import telegram
 import os
+import os.path
 from dotenv import load_dotenv
 # Enable logging
 logging.basicConfig(format='%(asctime)s - %(name)s - %(levelname)s - %(message)s', level=logging.INFO)
 
 logger = logging.getLogger(__name__)
 
-load_dotenv()
-TOKEN = os.getenv("API_TOKEN")
-
+if os.path.isfile(".env"):
+    load_dotenv()
+    TOKEN = os.getenv("API_TOKEN")
+    
+else:
+    TOKEN = os.getenv('API_TOKEN')
+    
 CHOOSING, TYPING_REPLY, TYPING_CHOICE = range(3)
 
 reply_keyboard = [
