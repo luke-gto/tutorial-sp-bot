@@ -94,7 +94,6 @@ def get_images_list():
             time.sleep(1)
             i = i + 1
         if type(image_link_list) != list:
-            print("error handling")
             i  = abs(i - 1)
             
     return imlistio
