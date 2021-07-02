@@ -1,1 +1,1 @@
-web: docker run tutorial-sp-bot 
+web: docker run tutorial-shitposting-bot 
