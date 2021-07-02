@@ -1,1 +1,1 @@
-web: docker run tutorial-shitposting-bot 
+worker: docker run tutorial-shitposting-bot 
