@@ -43,6 +43,14 @@ def start(update: Update, context: CallbackContext) -> int:
 
     return CHOOSING
 
+def restart(update: Update, context: CallbackContext) -> int:
+    update.message.reply_text(
+        "/start",
+        reply_markup=markup,
+    )
+
+    return CHOOSING
+
 
 def regular_choice(update: Update, context: CallbackContext) -> int:
     text = update.message.text        
@@ -118,7 +126,7 @@ def main() -> None:
                 )
             ],
         },
-        fallbacks=[MessageHandler(Filters.regex('^Restart$'), start)],
+        fallbacks=[MessageHandler(Filters.regex('^Restart$'), restart)],
     )
 
     dispatcher.add_handler(conv_handler)
