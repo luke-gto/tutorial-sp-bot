@@ -20,9 +20,10 @@ markup.row_width = 1
 keyword_mkup = types.KeyboardButton('Keyword')
 custom_title_mkup = types.KeyboardButton('Custom title')
 random_title_mkup = types.KeyboardButton('Random title')
+restart_mkup = types.KeyboardButton('/start')
 help_mkup = types.KeyboardButton("Help")
 
-markup.add(keyword_mkup, custom_title_mkup, random_title_mkup, help_mkup)
+markup.add(keyword_mkup, custom_title_mkup, random_title_mkup, restart_mkup, help_mkup)
 
 @bot.message_handler(commands=['start', 'help'])
 def send_welcome(message):
@@ -34,6 +35,7 @@ def get_choice(message):
 
     if message.text == 'Help':
         send_welcome(message)
+        return
 
     if message.text == 'Keyword' or 'Custom title' or 'Random title':
         choice = message.text
