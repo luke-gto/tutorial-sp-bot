@@ -13,6 +13,8 @@ COPY src/wh_img.py /usr/src/app/src
 COPY src/requirements.txt /usr/src/app
 COPY src/.env /usr/src/app/src
 
+ENV PYTHONPATH /usr/src/app/
+
 RUN ["pip3", "install", "-r", "requirements.txt"]
 
 CMD ["python3", "main.py"]
