@@ -8,6 +8,7 @@ RUN apt install fonts-roboto -y
 WORKDIR /usr/src/app
 
 COPY main.py /usr/src/app
+COPY src/__init__.py /usr/src/app/src
 COPY src/wh_img.py /usr/src/app/src
 COPY src/requirements.txt /usr/src/app
 COPY src/.env /usr/src/app/src
