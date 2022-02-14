@@ -9,7 +9,7 @@ WORKDIR /usr/src/app
 
 COPY main.py /usr/src/app
 COPY src/wh_img.py /usr/src/app/src
-COPY src/requirements.txt /usr/src/app/src
+COPY src/requirements.txt /usr/src/app
 COPY src/.env /usr/src/app/src
 
 RUN ["pip3", "install", "-r", "requirements.txt"]
